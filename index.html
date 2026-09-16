@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Configuration Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Pyodide to run Python in the browser -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+</head>
+<body>
+
+  <h1>User Configuration Manager</h1>
+  <p class="subtitle">Powered by Python & WebAssembly</p>
+
+  <div class="card">
+    <div class="form-group">
+      <input type="text" id="settingKey" placeholder="Setting Key (e.g., theme, language)">
+      <input type="text" id="settingValue" placeholder="Setting Value (e.g., dark, french)">
+    </div>
+
+    <div class="btn-group">
+      <button onclick="runAdd()">Add Setting</button>
+      <button onclick="runUpdate()">Update Setting</button>
+      <button class="danger" onclick="runDelete()">Delete Setting</button>
+      <button class="secondary" onclick="runView()">Refresh / View</button>
+    </div>
+
+    <div id="status">Loading Python runtime...</div>
+  </div>
+
+  <div class="card">
+    <h3>Current Settings Display:</h3>
+    <pre id="output">Loading...</pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
